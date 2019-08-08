@@ -1,9 +1,7 @@
 {
   "pages": [
-    "pages/welcome/welcome",
-    "pages/products/products"
-
-    
+    "pages/products/products",
+    "pages/welcome/welcome"
   ],
   "window": {
     "backgroundTextStyle": "light",

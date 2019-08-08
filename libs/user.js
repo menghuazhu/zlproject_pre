@@ -90,11 +90,9 @@ function doAppLogin(data, cb, ctx) {
       method: 'POST',
       success: function(res){
         var d = res.data;
-        if (d.errCode == '0000' && d.resultData) {
-            var sid = d.resultData.sid;
-            var isAllowPublish = d.resultData.isAllowPublish;
+        if (d.errCode == '0000' && d.sid) {
+            var sid = d.sid;
             wx.setStorageSync('sid', sid);
-            wx.setStorageSync('isAllowPublish', isAllowPublish);
             typeof cb == "function" && cb.call(ctx);
         } else {
             wx.showToast({
@@ -112,15 +110,7 @@ function doAppLogin(data, cb, ctx) {
       }
     })
 }
-function isAllowPublish(){
-    	/*是否显示发布按钮*/
-      
-    var isHiddenPush = wx.getStorageSync('isAllowPublish')
-    if (isHiddenPush!=null && isHiddenPush=='1') {
-        return '';
-    }
-	return true;
-}
+
 
 function checkAuthor(){
    // 查看是否授权
@@ -142,6 +132,6 @@ function checkAuthor(){
 
 module.exports = {
     login: login,
-    checkAuthor: checkAuthor,
-    isAllowPublish:isAllowPublish
+    checkAuthor: checkAuthor
+ 
 }
