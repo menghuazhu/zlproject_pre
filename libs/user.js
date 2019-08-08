@@ -124,7 +124,8 @@ function isAllowPublish(){
 
 function checkAuthor(){
    // 查看是否授权
-    flag = false;
+
+   var flag = false;
     wx.getSetting({
         success: function (res) {
             if (res.authSetting['scope.userInfo']) {
