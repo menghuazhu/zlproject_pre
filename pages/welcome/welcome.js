@@ -10,7 +10,6 @@ Page({
     defaultButton:'开始使用'
   },
 
-
   onLoad: function (options) {
       // 查看是否授权
       wx.getSetting({

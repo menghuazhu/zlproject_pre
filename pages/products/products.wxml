@@ -1,6 +1,6 @@
 <view class="container">
 
-    <text class="text">产品列表</text>
+    <image class="logo" src='http://res.zhenlong.wang/crowdweb/upload/icon/3176874492115646.jpg'></image>
   
 </view>
   
