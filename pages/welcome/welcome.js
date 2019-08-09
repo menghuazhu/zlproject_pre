@@ -22,7 +22,6 @@ Page({
                 //用户已经授权过
                 wx.redirectTo({
                 //  url: '../products/products',
-                // text
                 });
               }
             })
