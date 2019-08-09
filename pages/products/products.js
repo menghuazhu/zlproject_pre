@@ -3,7 +3,7 @@ var { monthFormatList, dayFormatList, APIS } = require('../../const');
 var util = require('../../utils/util');
 var user = require('../../libs/user');
 var { request } = require('../../libs/request');
-
+       
 Page({
 	data: {
     imgUrls: [
@@ -11,6 +11,7 @@ Page({
       '/images/switch_img02.png',
       '/images/switch_img03.png'
     ],
+    //
     indicatorDots: true,
     autoplay: true,
     circular: true,
