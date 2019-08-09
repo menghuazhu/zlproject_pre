@@ -6,6 +6,7 @@ var { request } = require('../../libs/request');
        
 Page({
 	data: {
+<<<<<<< HEAD
     imgUrls: [
       '/images/switch_img01.png',
       '/images/switch_img02.png',
@@ -73,6 +74,9 @@ Page({
       newp_img: '/images/new_ products.png',
       popular_img: '/images/popular.png'
     }],
+=======
+	  	fromShare: 0
+>>>>>>> 12462647bfd7bd932c3680617634267819fe3a3f
 	},
   // 选项卡
   filterTab: function (e) {
@@ -122,21 +126,27 @@ Page({
   },
 
 	onLoad: function (options) {
+<<<<<<< HEAD
     if(!user.checkAuthor()){
       //用户已经授权过
       wx.redirectTo({
         // url: '../welcome/welcome',
       });
     }
+=======
+    wx.getSetting({
+      success: function (res) {
+        if (!res.authSetting['scope.userInfo']) {
+          wx.redirectTo({
+            url: '../welcome/welcome',
+          });
+        }
+      }
+    });
+>>>>>>> 12462647bfd7bd932c3680617634267819fe3a3f
   },
 	onShow: function() {
 		user.login(this.renderUI, this, true);
-		var footerConfig = {
-			isHiddenPush:user.isAllowPublish()
-		};
-		this.setData({
-			footerConfig:footerConfig
-		});
 	},
 
 	renderUI: function () {

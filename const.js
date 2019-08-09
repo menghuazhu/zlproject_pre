@@ -24,7 +24,9 @@ var dayFormatList = [
 ];
 
 var reqHost = 'https://zl.haiyunzy.com/zlnewpro/xcxpath';
-var reqImgHost = 'https://zl.haiyunzy.com/zlnewpro';
+//var reqImgHost = 'https://zl.haiyunzy.com/zlnewpro/imgs';
+var cdnHost = 'http://res.zhenlong.wang';//cdn地址
+var reqImgHost = 'http://res.zhenlong.wang/crowdweb';//目前显示图片地址， cdnPath+图片地址
 
 var APIS = {
   REQ_IMG_HOST:         reqImgHost,
@@ -32,9 +34,15 @@ var APIS = {
   CHECK_SESSION: 						reqHost + '/xcxUserLogin/wx/checkSession',
   FILE_UPLOAD:              reqHost + '/fileUpload',//删除图片
 
+<<<<<<< HEAD
   GET_BANNER: 						reqHost + '/getBanner',//首页banner
 
   
+=======
+  PRODUCT_LIST:             reqHost + '/xcxZlProduct/list',//产品列表
+  PRODUCT_DETAIL:           reqHost + '/xcxZlProduct/detail'//产品详情
+ 
+>>>>>>> 12462647bfd7bd932c3680617634267819fe3a3f
 	
 };
 

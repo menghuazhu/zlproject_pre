@@ -10,12 +10,12 @@ Page({
     defaultButton:'开始使用'
   },
 
-
   onLoad: function (options) {
       // 查看是否授权
       wx.getSetting({
         success: function (res) {
           if (res.authSetting['scope.userInfo']) {
+<<<<<<< HEAD
             wx.getUserInfo({
               success: function (res) {
                 console.log(res.userInfo)
@@ -25,6 +25,12 @@ Page({
                 });
               }
             })
+=======
+            //用户已经授权过
+            wx.redirectTo({
+              url: '../products/products',
+            });
+>>>>>>> 12462647bfd7bd932c3680617634267819fe3a3f
           }
         }
       })
