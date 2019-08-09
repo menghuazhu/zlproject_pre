@@ -34,7 +34,7 @@ var APIS = {
 
   GET_BANNER: 						reqHost + '/getBanner',//首页banner
 
- 
+  
 	
 };
 
