@@ -26,7 +26,7 @@ var dayFormatList = [
 var reqHost = 'https://zl.haiyunzy.com/zlnewpro/xcxpath';
 //var reqImgHost = 'https://zl.haiyunzy.com/zlnewpro/imgs';
 var cdnHost = 'http://res.zhenlong.wang';//cdn地址
-var productImagePath = 'http://res.zhenlong.wang/crowdweb';//目前显示图片地址， cdnPath+图片地址
+var reqImgHost = 'http://res.zhenlong.wang/crowdweb';//目前显示图片地址， cdnPath+图片地址
 
 var APIS = {
   REQ_IMG_HOST:         reqImgHost,
