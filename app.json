@@ -2,10 +2,7 @@
   "pages": [
     "pages/products/products",
     "pages/welcome/welcome"
-<<<<<<< HEAD
-    
-=======
->>>>>>> 12462647bfd7bd932c3680617634267819fe3a3f
+
   ],
   "window": {
     "backgroundTextStyle": "light",

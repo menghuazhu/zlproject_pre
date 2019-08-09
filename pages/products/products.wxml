@@ -1,6 +1,4 @@
 <view class="container">
-
-<<<<<<< HEAD
   <view class="switch_img">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActivecolor}}" class="swiperclass">
       <block wx:for="{{imgUrls}}" wx:key>
@@ -10,9 +8,8 @@
       </block>
     </swiper>
   </view>
-=======
     <image class="logo" src='http://res.zhenlong.wang/crowdweb/upload/icon/3176874492115646.jpg'></image>
->>>>>>> 12462647bfd7bd932c3680617634267819fe3a3f
+
   
 <view class="posi">  
 <view class="position">
