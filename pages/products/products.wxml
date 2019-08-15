@@ -21,8 +21,14 @@
   </view>
   <!--筛选项-->
   <view class="tabLayer" hidden="{{tab[0]}}">
+   <view bindtap="gettarContentSort" data-whole="">
     <text class="{{whole_id==0?'active':''}}" data-id="0" data-index="0" data-txt="全部" bindtap="filter">全部</text>
-    <text class="{{whole_id==item.id?'active':''}}" wx:for="{{wholeList}}" wx:key="pp" wx:for-item="item" data-id="{{item.id}}" data-type="{{item.type}}" data-index="0" data-txt="{{item.title}}" bindtap="filter">{{item.title}}</text>
+   </view>
+    <block  wx:for="{{wholeList}}" wx:key="pp" wx:for-item="item">
+    <view bindtap="gettarContentSort" data-type="{{item.type}}">
+    <text class="{{whole_id==item.id?'active':''}}" data-id="{{item.id}}" data-index="0" data-txt="{{item.title}}" bindtap="filter">{{item.title}}</text>
+    </view>
+    </block>
   </view>
 
   <view class="tabLayer" hidden="{{tab[1]}}" style="left:{{left}}">
@@ -52,7 +58,7 @@
           <!-- <image class="newp_img" wx:if="{{item.productType=='1'}}" src="/images/new_products.png"></image>
           <image class="newp_img" wx:if="{{item.productType=='2'}}" src="/images/popular.png"></image> -->
           <view class='img'>
-            <image src="{{}}" mode="scaleToFill" />
+            <image src="{{productDetailLogo}}{{item.productLogo}}" mode="scaleToFill" />
           </view>
           <view class='info'>
             <text class='title'>{{item.productName}}</text>
@@ -70,6 +76,6 @@
         加载中...
       </loading>
       <view wx:if="{{hasMore==true}}" class="page-load">上拉加载更多数据...</view>
-      <view wx:else="{{hasMore==false}}" class="page-load">已加载完了...</view>
+      <view wx:else="{{hasMore==false}}" class="page-load">已加载完...</view>
 
 </view>

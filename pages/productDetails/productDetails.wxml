@@ -1,6 +1,6 @@
 <view class="productDetails">
-  <image src="/images/switch_img01.png" class="topImg"></image>
-  <view class="details-list">
+  <image src="{{productDetailLogo}}{{orderList.productDetailLogo}}" class="topImg"></image>
+  <!-- <view class="details-list">
     <view class="details-text">
      <text class="property-name">产品名称：</text>
      <text class="property">{{orderList.productName}}</text>
@@ -8,7 +8,7 @@
     <view class="details-text">
      <text class="property-name">卷烟类型：</text>
      <text class="property">{{orderList.cigaretteType}}</text>
-    </view>
+    </view> -->
     <!-- <view class="details-text">
      <text class="property-name">卷烟类型：</text>
      <text class="property">烤烟型</text>
@@ -25,5 +25,5 @@
      <text class="property-name">包装形式：</text>
      <text class="property">条盒硬盒</text>
     </view> -->
-  </view>
+  <!-- </view> -->
 </view>

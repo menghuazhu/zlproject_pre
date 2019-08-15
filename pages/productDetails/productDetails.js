@@ -10,6 +10,7 @@ Page({
    */
   data: {
     // orderList: []
+    productDetailLogo: 'http://zl.haiyunzy.com/crowdweb/',
   },
   /**
    * 生命周期函数--监听页面加载
@@ -26,7 +27,7 @@ Page({
       method: 'POST',
       realSuccess: function (resultData) {
         var orderList = resultData.dataList[posId];
-        console.log(orderList)
+        // console.log(orderList)
         that.setData({
           orderList: orderList
         })
