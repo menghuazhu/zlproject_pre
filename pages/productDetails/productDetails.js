@@ -1,18 +1,37 @@
 // pages/productDetails/productDetails.js
+var { monthFormatList, dayFormatList, APIS } = require('../../const');
+var util = require('../../utils/util');
+var user = require('../../libs/user');
+var { request } = require('../../libs/request');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    // orderList: []
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var posId=options.id;
+    // console.log(posId)
+    request({
+      url: APIS.PRODUCT_LIST,
+      data: {
+        sid: wx.getStorageSync('sid'),
+      },
+      method: 'POST',
+      realSuccess: function (resultData) {
+        var orderList = resultData.dataList[posId];
+        console.log(orderList)
+        that.setData({
+          orderList: orderList
+        })
+      },
+    }, false,that);
   },
 
   /**

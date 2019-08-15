@@ -6,7 +6,9 @@ function login(cb, ctx, needCheckSession) {
         var sid = wx.getStorageSync('sid');
         // 如果有sid，执行逻辑
         if (sid) {
-            typeof cb == "function" && cb.call(ctx);
+            // typeof cb == "function" && cb.call(ctx);
+          checkAppLogin(sid, cb, ctx);
+
         // 如果没有sid，重新wx登录
         } else {
             rawLogin(cb, ctx);

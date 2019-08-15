@@ -1,24 +1,29 @@
 page {
   height: 100%;
   padding-bottom: 0;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 }
+
 .container {
   width: 100%;
   font-size: 28rpx;
 }
+
 .switch_img, .swiperclass, .slide-image {
   width: 750rpx;
   height: 400rpx;
 }
-.posi{
+
+.posi {
   width: 100%;
 }
-.position{
+
+.position {
   width: 100%;
   position: absolute;
   z-index: 10;
 }
+
 .tabTit {
   height: 90rpx;
   line-height: 90rpx;
@@ -49,6 +54,7 @@ page {
   vertical-align: middle;
   margin-left: 5px;
 }
+
 .flex1 {
   flex: 1;
   overflow: hidden;
@@ -63,10 +69,12 @@ page {
   display: -ms-flexbox;
   display: flex;
 }
+
 .clear {
   clear: both;
   overflow: hidden;
 }
+
 .tabLayer {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
   width: 33%;
@@ -81,7 +89,6 @@ page {
   position: relative;
   z-index: 99;
   /* top:354rpx; */
-  
 }
 
 .tabLayer text {
@@ -105,10 +112,11 @@ navigator {
 
 .list {
   width: 750rpx;
-  margin-top: 105rpx;
+  /* margin-top: 105rpx; */
 }
-.list_con{
-  width:96.5%;
+
+.list_con {
+  width: 96.5%;
   margin: auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -116,8 +124,9 @@ navigator {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content:space-between;
+  justify-content: space-between;
 }
+
 .list .list_item {
   background-color: #fff;
   border: 1rpx solid #e8e8e8;
@@ -127,23 +136,25 @@ navigator {
   margin-top: 12rpx;
   position: relative;
 }
-.newp_img{
+
+.newp_img {
   width: 52rpx;
   height: 52rpx;
   position: absolute;
-  top:0;
+  top: 0;
   left: 12rpx;
   z-index: 2;
 }
+
 .list .list_item .img {
   width: 100%;
-  height:310rpx;
+  height: 310rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  flex-direction:column;
-  align-content:center;
+  flex-direction: column;
+  align-content: center;
 }
 
 .list .list_item .img image {
@@ -153,36 +164,40 @@ navigator {
 }
 
 .list .list_item .info {
-  width:100%;
+  width: 100%;
   height: 80rpx;
 }
 
-.list .list_item .info .title{
+.list .list_item .info .title {
   width: 90%;
   display: block;
   margin: auto;
   color: #333;
   text-align: center;
   font-size: 32rpx;
-  padding:20rpx 0rpx 20rpx 0rpx;
+  padding: 20rpx 0rpx 20rpx 0rpx;
 }
-.list .list_item .details{
-  width:100%;
+
+.list .list_item .details {
+  width: 100%;
   height: 50rpx;
 }
-.list .list_item .details .details_title{
-width: 90%;
+
+.list .list_item .details .details_title {
+  width: 90%;
   display: block;
   margin: auto;
-  color: #A9A9A9;
+  color: #a9a9a9;
   text-align: right;
   font-size: 15px;
   padding-top: 9rpx;
 }
-.more_img{
-  width:40rpx;
+
+.more_img {
+  width: 40rpx;
   height: 40rpx;
 }
+
 .list .list_item .info .price {
   color: #ff2727;
   margin-left: 10px;
@@ -196,4 +211,15 @@ width: 90%;
   color: #747474;
   margin-left: 10px;
   font-size: 15px;
+}
+
+/*
+*上拉刷新分页
+*/
+.page-load {
+  width: 100%;
+  text-align: center;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  color: rgb(112, 111, 111);
 }

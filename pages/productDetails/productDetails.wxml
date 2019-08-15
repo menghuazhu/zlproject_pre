@@ -3,9 +3,13 @@
   <view class="details-list">
     <view class="details-text">
      <text class="property-name">产品名称：</text>
-     <text class="property">中国真龙</text>
+     <text class="property">{{orderList.productName}}</text>
     </view>
     <view class="details-text">
+     <text class="property-name">卷烟类型：</text>
+     <text class="property">{{orderList.cigaretteType}}</text>
+    </view>
+    <!-- <view class="details-text">
      <text class="property-name">卷烟类型：</text>
      <text class="property">烤烟型</text>
     </view>
@@ -20,6 +24,6 @@
     <view class="details-text">
      <text class="property-name">包装形式：</text>
      <text class="property">条盒硬盒</text>
-    </view>
+    </view> -->
   </view>
 </view>

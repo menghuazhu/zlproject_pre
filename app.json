@@ -1,14 +1,15 @@
 {
   "pages": [
     "pages/products/products",
+    "pages/productDetails/productDetails",
     "pages/welcome/welcome"
-
   ],
   "window": {
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ff818f",
     "navigationBarTitleText": "产品展示",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark"
   },
   "sitemapLocation": "sitemap.json"
 }

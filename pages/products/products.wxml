@@ -8,7 +8,7 @@
       </block>
     </swiper>
   </view>
-    <image class="logo" src='http://res.zhenlong.wang/crowdweb/upload/icon/3176874492115646.jpg'></image>
+    <!-- <image class="logo" src='http://res.zhenlong.wang/crowdweb/upload/icon/3176874492115646.jpg'></image> -->
 
   
 <view class="posi">  
@@ -22,42 +22,54 @@
   <!--筛选项-->
   <view class="tabLayer" hidden="{{tab[0]}}">
     <text class="{{whole_id==0?'active':''}}" data-id="0" data-index="0" data-txt="全部" bindtap="filter">全部</text>
-    <text class="{{whole_id==item.id?'active':''}}" wx:for="{{wholeList}}" wx:key="pp" wx:for-item="item" data-id="{{item.id}}" data-index="0" data-txt="{{item.title}}" bindtap="filter">{{item.title}}</text>
+    <text class="{{whole_id==item.id?'active':''}}" wx:for="{{wholeList}}" wx:key="pp" wx:for-item="item" data-id="{{item.id}}" data-type="{{item.type}}" data-index="0" data-txt="{{item.title}}" bindtap="filter">{{item.title}}</text>
   </view>
+
   <view class="tabLayer" hidden="{{tab[1]}}" style="left:{{left}}">
     <!-- <text class="{{tar_id==0?'active':''}}" data-id="0" data-index="1" data-txt="焦油" bindtap="filter">不限</text> -->
-    <text class="{{tar_id==1?'active':''}}" data-id="1" data-index="1" bindtap="filter">从高到低</text>   
+    <view bindtap="gettarContentSort" data-tarcontentsort="asc"><text class="{{tar_id==1?'active':''}}" data-id="1" data-index="1"  bindtap="filter">从高到低</text></view>   
+    <view  bindtap="gettarContentSort" data-tarcontentsort="desc">
     <text class="{{tar_id==2?'active':''}}" data-id="2" data-index="1" bindtap="filter">从低到高</text>
+    </view>
   </view>
   <view class="tabLayer" hidden="{{tab[2]}}" style="left:{{right}}">
     <!-- <text class="{{price_id==0?'active':''}}" data-id="0" data-index="2" data-txt="价格" bindtap="filter">不限</text> -->
+    <view bindtap="gettarContentSort" data-price="asc">
     <text class="{{price_id==1?'active':''}}" data-id="1" data-index="2" bindtap="filter">从高到低</text>
+    </view>
+    <view bindtap="gettarContentSort" data-price="desc">
     <text class="{{price_id==2?'active':''}}" data-id="2" data-index="2" bindtap="filter">从低到高</text>
+    </view>
   </view>
   </view>
   </view>
   <!-- 列表 -->
+  <scroll-view style="margin-top:105rpx;" scroll-y="true" bindscrolltolower="searchScrollLower">
   <view class='list'>
     <view class="list_con">
-      <block wx:for='{{dataList}}' wx:key='list' wx:for-item="item">
-        <view class="list_item">
-          <!-- <navigator url='details?id={{item.goods_id}}'> -->
-          <image class="newp_img" src="{{item.goods_id<=2?item.newp_img:item.popular_img}}"></image>
+      <block wx:for="{{orderList}}" wx:key='index'>
+        <view class="list_item"  catchtap="onProductTap" data-id="{{index}}">
+          <!-- <image class="newp_img" wx:if="{{item.productType=='1'}}" src="/images/new_products.png"></image>
+          <image class="newp_img" wx:if="{{item.productType=='2'}}" src="/images/popular.png"></image> -->
           <view class='img'>
-            <image src="{{item.goods_img}}" mode="scaleToFill" />
+            <image src="{{}}" mode="scaleToFill" />
           </view>
           <view class='info'>
-            <text class='title'>{{item.goods_title}}</text>
-            <!-- <view class='price'>￥{{item.goods_price}}</view>
-        <view class='num'>销量{{item.goods_xiaoliang}}</view> -->
+            <text class='title'>{{item.productName}}</text>
           </view>
           <view class='details'>
-            <text class='details_title'>{{item.details_title}} <text class="iconfont icon-gengduo"></text></text>
+            <text class='details_title'>详细内容 <text class="iconfont icon-gengduo"></text></text>
           </view>
-          <!-- </navigator> -->
           <view class='clear'></view>
         </view>
       </block>
     </view>
   </view>
+  </scroll-view>
+  <loading hidden="{{loadingHidden}}">
+        加载中...
+      </loading>
+      <view wx:if="{{hasMore==true}}" class="page-load">上拉加载更多数据...</view>
+      <view wx:else="{{hasMore==false}}" class="page-load">已加载完了...</view>
+
 </view>
