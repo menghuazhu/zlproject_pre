@@ -14,7 +14,7 @@ Page({
     imgUrls: [
       '/images/switch_img01.png',
       '/images/switch_img02.png',
-      '/images/switch_img03.png'
+      '/images/switch_img03.png' 
     ],
     indicatorDots: true,
     autoplay: true,
@@ -27,7 +27,7 @@ Page({
     right: "66.3%",
     orderList: [], //存放数据的数组
     pageNo: 1, // 当前页数
-    pageSize: 10, //每页条数
+    pageSize: 9, //每页条数
     loadingHidden: false, //控制提示文字的显示隐藏
     hasMore: true, //是否还有数据 true 有，false没有
     productDetailLogo: 'http://zl.haiyunzy.com/crowdweb/',
@@ -125,7 +125,7 @@ Page({
         sid: wx.getStorageSync('sid'),
         productBean: {
           pageNo: 1,
-          pageSize: 10,
+          pageSize: 9,
           tarContentSort: curTarg, //焦油量排序 desc asc
           priceSort: curPrice, //价格排序 desc asc
           // productType: '1',//商品类型（0：普通，1：新品，2：人气，3：成熟）
@@ -147,7 +147,6 @@ Page({
               orderList: orderList,
               hasMore: false, //是否还有更多数据：没有
               loadingHidden: true, //隐藏加载框
-              curTarg: curTarg,
             })
           } else {
             that.setData({
@@ -155,7 +154,6 @@ Page({
               hasMore: true, //是否还有更多数据：有
               pageNo: resultData.pageNo + 1, //页数加1
               loadingHidden: true, //隐藏加载框
-              curTarg: curTarg,
             })
           }
         }
@@ -172,6 +170,7 @@ Page({
       }
     }, false, that);
   },
+  // 列表
   getProductList() {
     var that = this;
     var orderList = []
@@ -225,7 +224,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-    if (this.data.hasMore) {
+    if (this.data.hasMore && this.pageSize > 10) {
       this.searchScrollLower()
     } else {
       wx.showToast({

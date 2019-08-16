@@ -5,7 +5,7 @@
         <swiper-item>
           <image src="{{item}}" class="slide-image" />
         </swiper-item>
-      </block>
+      </block> 
     </swiper>
   </view>
     <!-- <image class="logo" src='http://res.zhenlong.wang/crowdweb/upload/icon/3176874492115646.jpg'></image> -->
@@ -50,11 +50,11 @@
   </view>
   </view>
   <!-- 列表 -->
-  <scroll-view style="margin-top:105rpx;" scroll-y="true" bindscrolltolower="searchScrollLower">
+  <scroll-view style="margin-top:103rpx;" scroll-y="true" bindscrolltolower="searchScrollLower">
   <view class='list'>
     <view class="list_con">
       <block wx:for="{{orderList}}" wx:key='index'>
-        <view class="list_item"  catchtap="onProductTap" data-id="{{index}}">
+        <view class="list_item"  catchtap="onProductTap" data-id="{{item.id}}">
           <!-- <image class="newp_img" wx:if="{{item.productType=='1'}}" src="/images/new_products.png"></image>
           <image class="newp_img" wx:if="{{item.productType=='2'}}" src="/images/popular.png"></image> -->
           <view class='img'>
@@ -75,7 +75,7 @@
   <loading hidden="{{loadingHidden}}">
         加载中...
       </loading>
-      <view wx:if="{{hasMore==true}}" class="page-load">上拉加载更多数据...</view>
-      <view wx:else="{{hasMore==false}}" class="page-load">已加载完...</view>
+      <view wx:if="{{hasMore==true && pageSize>10}}" class="page-load">上拉加载更多数据...</view>
+      <view wx:else="{{hasMore==false && pageSize<10}}" class="page-load">已加载完...</view>
 
 </view>

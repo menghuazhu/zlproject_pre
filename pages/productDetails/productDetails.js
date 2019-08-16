@@ -7,9 +7,9 @@ Page({
 
   /**
    * 页面的初始数据
-   */
+   */ 
   data: {
-    // orderList: []
+    // orderList: [],
     productDetailLogo: 'http://zl.haiyunzy.com/crowdweb/',
   },
   /**
@@ -18,16 +18,18 @@ Page({
   onLoad: function (options) {
     var that = this;
     var posId=options.id;
-    // console.log(posId)
+    // console.log("id:"+posId)
     request({
-      url: APIS.PRODUCT_LIST,
+      url: APIS.PRODUCT_DETAIL,
       data: {
         sid: wx.getStorageSync('sid'),
+        productId: posId
       },
       method: 'POST',
       realSuccess: function (resultData) {
-        var orderList = resultData.dataList[posId];
-        // console.log(orderList)
+        // console.log(resultData)
+        var orderList = resultData;
+        //  console.log(orderList)
         that.setData({
           orderList: orderList
         })

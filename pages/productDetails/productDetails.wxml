@@ -6,7 +6,7 @@
      <text class="property">{{orderList.productName}}</text>
     </view>
     <view class="details-text">
-     <text class="property-name">卷烟类型：</text>
+     <text class="property-name">卷烟类型：</text> 
      <text class="property">{{orderList.cigaretteType}}</text>
     </view> -->
     <!-- <view class="details-text">

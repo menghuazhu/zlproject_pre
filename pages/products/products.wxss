@@ -11,7 +11,7 @@ page {
 
 .switch_img, .swiperclass, .slide-image {
   width: 750rpx;
-  height: 400rpx;
+  height: 400rpx; 
 }
 
 .posi {
@@ -21,6 +21,7 @@ page {
 .position {
   width: 100%;
   position: absolute;
+  top:400rpx;
   z-index: 10;
 }
 
