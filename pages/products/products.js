@@ -14,7 +14,7 @@ Page({
     imgUrls: [
       '/images/switch_img01.png',
       '/images/switch_img02.png',
-      '/images/switch_img03.png' 
+      '/images/switch_img03.png'
     ],
     indicatorDots: true,
     autoplay: true,
@@ -114,9 +114,9 @@ Page({
   gettarContentSort(e) {
     var that = this;
     var orderList = []
-    let curTarg = e.currentTarget.dataset.tarcontentsort;
-    let curPrice = e.currentTarget.dataset.price;
-    let type = e.currentTarget.dataset.type;
+    let curTarg = e.currentTarget.dataset.tarcontentsort; //获取焦油排序
+    let curPrice = e.currentTarget.dataset.price; //获取价格排序
+    let type = e.currentTarget.dataset.type;//获取商品类型
     let whole = e.currentTarget.dataset.whole;
     // console.log(whole)
     request({
@@ -135,7 +135,6 @@ Page({
       },
       method: 'POST',
       realSuccess: function(resultData) {
-        // console.log(resultData)
         if (resultData.dataList.length != 0) {
           if (resultData.pageNo == 1) { //当页数为1时，定义的数组为空
             orderList = []
@@ -158,7 +157,8 @@ Page({
           }
         }
       },
-      realFail: function (resultMsg) {
+      realFail: function(resultMsg) {
+        // console.log(resultMsg)
         wx.showToast({
           title: resultMsg
         });
@@ -181,7 +181,6 @@ Page({
       },
       method: 'POST',
       realSuccess: function(resultData) {
-        //  productDetailLogo = APIS.REQ_IMG_HOST +'/upload/icon/4927229033617721.png';
         if (resultData.dataList.length != 0) {
           if (resultData.pageNo == 1) { //当页数为1时，定义的数组为空
             orderList = []
@@ -205,12 +204,14 @@ Page({
           }
         }
       },
-      realFail: function (resultMsg) {
+      realFail: function(resultMsg) {
+        console.log(resultMsg)
         wx.showToast({
           title: resultMsg
         });
       },
       realComplete: function(resultMsg) {
+        // console.log(resultMsg)
         wx.showToast({
           title: resultMsg
         });
